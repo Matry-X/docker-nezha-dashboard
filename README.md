@@ -27,6 +27,7 @@ docker build -t your-tag .
 
 ### run
 
+variables
 ```env
 # required
 ARGO_DOMAIN='test.example.com'
