@@ -1,0 +1,23 @@
+debug: false
+realipheader: ""
+language: zh_CN
+sitename: Nezha Monitor
+usertemplate: user-dist
+admintemplate: admin-dist
+jwtsecretkey: -secret-key-1024-
+agentsecretkey: -secret-key-32-
+listenport: 8008
+listenhost: ""
+installhost: ""
+tls: false
+location: Asia/Shanghai
+enableplainipinnotification: false
+enableipchangenotification: false
+ipchangenotificationgroupid: 0
+cover: 1
+ignoredipnotification: ""
+ignoredipnotificationserverids: {}
+avgpingcount: 2
+dnsservers: ""
+customcode: ""
+customcodedashboard: ""
