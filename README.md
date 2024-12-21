@@ -1,2 +1,2 @@
 # docker-nezha-dashboard
-nezha dashboard + local nezha agent + cloudflare tunnel
+nezha dashboard 1.* + local nezha agent + cloudflare tunnel
