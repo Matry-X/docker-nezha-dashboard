@@ -4,10 +4,15 @@ nezha dashboard 1.* + local nezha agent + cloudflare tunnel
 **still on testing**
 
 **NOTICE**
+
 > ONLY support x64 platform
+
 > download required applications while build, NO ANY auto update
+
 > NO ANY backup, just manually download `sqlite.db` in `/dashboard/data`
+
 > I am thinking about more elegant and easy way to backup needed data
+
 > if you have any nice idea, please ISSUE
 
 ## HOW TO USE
