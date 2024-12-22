@@ -43,7 +43,9 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
         # copy agent yaml template
         cp ${DATA_DIR}/template/config.agent.yml ${DATA_DIR}/config.agent.yml
         # replace secret key
-        sed -e "s#-uuid-#$AGENT_UUID#" -e "s#-secret-key-32-#$CLIENT_SECRET#" -i ${DATA_DIR}/config.agent.yml
+        sed -e "s#-uuid-#$AGENT_UUID#" \
+            -e "s#-secret-key-32-#$CLIENT_SECRET#" \
+            -i ${DATA_DIR}/config.agent.yml
     fi
     # install agent
     ${WORK_DIR}/agent service -c ${DATA_DIR}/config.agent.yml install
@@ -60,6 +62,17 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
     DASHBOARD_CMD="$WORK_DIR/dashboard"
 
     ## caddy
+    if [ ! -e ${DATA_DIR}/Caddyfile ]; then
+        # generate cert
+        openssl genrsa -out $WORK_DIR/nezha.key 2048
+        openssl req -new -subj "/CN=$ARGO_DOMAIN" -key $WORK_DIR/nezha.key -out $WORK_DIR/nezha.csr
+        openssl x509 -req -days 36500 -in $WORK_DIR/nezha.csr -signkey $WORK_DIR/nezha.key -out $WORK_DIR/nezha.pem
+        # copy Caddyfile
+        cp ${DATA_DIR}/template/Caddyfile ${DATA_DIR}/Caddyfile
+        # replace secret key
+        sed -e "s#-work-dir-#$WORK_DIR#g" \
+            -i ${DATA_DIR}/config.agent.yml
+    fi
     CADDY_CMD="$WORK_DIR/caddy run --config $DATA_DIR/Caddyfile --watch"
 
     ## cloudflared

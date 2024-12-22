@@ -20,6 +20,3 @@ tls: false
 use_gitee_to_upgrade: false
 use_ipv6_country_code: false
 uuid: -uuid-
-dns:
- - "1.1.1.1"
- - "1.0.0.1"
