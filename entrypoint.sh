@@ -41,9 +41,9 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
         cp ${DATA_DIR}/template/config.agent.yml ${DATA_DIR}/config.agent.yml
         # replace secret key
         sed -e "s#-uuid-#$AGENT_UUID#" -e "s#-secret-key-32-#$CLIENT_SECRET#" -i ${DATA_DIR}/config.agent.yml
-        # install agent
-        ${WORK_DIR}/agent service -c ${DATA_DIR}/config.agent.yml install
     fi
+    # install agent
+    ${WORK_DIR}/agent service -c ${DATA_DIR}/config.agent.yml install
 
     if [ ! -e ${DATA_DIR}/sqlite.db ]; then
         # copy template db file
