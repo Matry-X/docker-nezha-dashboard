@@ -41,3 +41,8 @@ docker run -d \
   --name "Dashboard" \
   your-tag:latest
 ```
+
+## INSPIRATION
+
+[nezhahq/nezha](https://github.com/nezhahq/nezha)  
+[fscarmen2/Argo-Nezha-Service-Container](https://github.com/fscarmen2/Argo-Nezha-Service-Container)
