@@ -33,7 +33,10 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
         # copy dashboard yaml template
         cp ${DATA_DIR}/template/config.dashboard.yml ${DATA_DIR}/config.yaml
         # replace secret key
-        sed -e "s#-secret-key-1024-#$JWT_SECRETKEY#" -e "s#-secret-key-32-#$CLIENT_SECRET#" -i ${DATA_DIR}/config.yaml
+        sed -e "s#-secret-key-1024-#$JWT_SECRETKEY#" \
+            -e "s#-secret-key-32-#$CLIENT_SECRET#" \
+            -e "s#-install-host-#$ARGO_DOMAIN#" \
+            -i ${DATA_DIR}/config.yaml
     fi
 
     if [ ! -e ${DATA_DIR}/config.agent.yml ]; then
