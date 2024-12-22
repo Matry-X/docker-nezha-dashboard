@@ -9,7 +9,7 @@ agentsecretkey: -secret-key-32-
 listenport: 8008
 listenhost: ""
 installhost: -install-host-
-tls: false
+tls: true
 location: Asia/Shanghai
 enableplainipinnotification: false
 enableipchangenotification: false

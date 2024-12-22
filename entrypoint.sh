@@ -35,7 +35,7 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
         # replace secret key
         sed -e "s#-secret-key-1024-#$JWT_SECRETKEY#" \
             -e "s#-secret-key-32-#$CLIENT_SECRET#" \
-            -e "s#-install-host-#$ARGO_DOMAIN#" \
+            -e "s#-install-host-#$ARGO_DOMAIN:443#" \
             -i ${DATA_DIR}/config.yaml
     fi
 
