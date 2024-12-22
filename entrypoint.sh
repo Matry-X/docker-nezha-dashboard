@@ -71,7 +71,7 @@ if [ ! -s /etc/supervisor/conf.d/damon.conf ]; then
         cp ${DATA_DIR}/template/Caddyfile ${DATA_DIR}/Caddyfile
         # replace secret key
         sed -e "s#-work-dir-#$WORK_DIR#g" \
-            -i ${DATA_DIR}/config.agent.yml
+            -i ${DATA_DIR}/Caddyfile
     fi
     CADDY_CMD="$WORK_DIR/caddy run --config $DATA_DIR/Caddyfile --watch"
 
