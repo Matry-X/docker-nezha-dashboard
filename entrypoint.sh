@@ -2,18 +2,6 @@
 
 # required variables
 ADMIN_SECRET=${ADMIN_SECRET:-'$2a$10$pGBH10RM.LDvQREgrz60G.cP77QlrIbQVRCJ3ygB2pwKMUN8GiucW'} # default password 'admin'
-ARGO_DOMAIN=${ARGO_DOMAIN}
-ARGO_TOKEN=${ARGO_TOKEN}
-
-# applications version
-CADDY_VERSION='2.8.4'
-CLOUDFLARED_VERSION='2024.12.2'
-AGENT_VERSION='1.2.0'
-DASHBOARD_VERSION='1.3.0'
-# https://github.com/caddyserver/caddy/releases/download/v2.8.4/caddy_2.8.4_linux_amd64.tar.gz
-# https://github.com/cloudflare/cloudflared/releases/download/2024.12.2/cloudflared-linux-amd64
-# https://github.com/nezhahq/agent/releases/download/v1.2.0/nezha-agent_linux_amd64.zip
-# https://github.com/nezhahq/nezha/releases/download/v1.3.0/dashboard-linux-amd64.zip
 
 # auto generated variables
 DATA_DIR="$(pwd)/data"
